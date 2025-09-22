@@ -389,39 +389,46 @@
     margin-top: auto;
 }
 
-/* 浮窗样式 */
+/* 浮窗样式 - 与首页保持一致 */
 .floating-widgets {
     position: fixed;
     right: 30px;
-    bottom: 30px;
+    bottom: 120px;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    z-index: 1000;
+    gap: 15px;
 }
 
 .float-widget {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    width: 60px;
+    height: 60px;
+    background: #667eea;
     color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
+    border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
-    font-size: 0.9rem;
-    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .float-widget:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: #5a6fd8;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .float-widget i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.float-widget span {
+    font-size: 0.6rem;
+    font-weight: 500;
 }
 
 /* 响应式设计 */
@@ -470,16 +477,46 @@
     }
     
     .floating-widgets {
-        right: 20px;
-        bottom: 20px;
+        right: 15px;
+        bottom: 100px;
     }
     
     .float-widget {
-        padding: 10px 16px;
-        font-size: 0.85rem;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .float-widget i {
+        font-size: 1.1rem;
+    }
+    
+    .float-widget span {
+        font-size: 0.55rem;
     }
     
     .case-results {
         gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-widgets {
+        right: 10px;
+        bottom: 80px;
+        gap: 12px;
+    }
+    
+    .float-widget {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .float-widget i {
+        font-size: 1rem;
+        margin-bottom: 1px;
+    }
+    
+    .float-widget span {
+        font-size: 0.5rem;
     }
 }
