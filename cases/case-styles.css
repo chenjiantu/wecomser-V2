@@ -281,7 +281,157 @@
     margin-bottom: 16px;
 }
 
+/* 案例库宫格布局 */
+.cases-grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.case-grid-item {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: #667eea;
+}
+
+.case-grid-item .service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.case-grid-item .service-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.case-grid-item h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.case-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #f8f9ff;
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.case-grid-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.case-results {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.result-item {
+    text-align: center;
+    flex: 1;
+}
+
+.result-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+
+.result-label {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.case-grid-item .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* 浮窗样式 */
+.floating-widgets {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.float-widget {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.float-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.float-widget i {
+    font-size: 1.1rem;
+}
+
 /* 响应式设计 */
+@media (max-width: 1200px) {
+    .cases-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+}
+
 @media (max-width: 768px) {
     .case-content {
         grid-template-columns: 1fr;
@@ -308,5 +458,28 @@
     
     .related-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .case-grid-item {
+        padding: 24px;
+    }
+    
+    .floating-widgets {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .float-widget {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .case-results {
+        gap: 12px;
     }
 }
