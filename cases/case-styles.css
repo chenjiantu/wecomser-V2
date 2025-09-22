@@ -1,4 +1,9 @@
 /* 案例页面专用样式 */
+body {
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8f2ff 100%);
+    min-height: 100vh;
+}
+
 .case-container {
     max-width: 1200px;
     margin: 0 auto;

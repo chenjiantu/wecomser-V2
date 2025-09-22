@@ -208,5 +208,24 @@
   </div>
 
   <script src="../script.js"></script>
+  <script>
+    // 浮窗功能 - 与首页保持一致
+    document.addEventListener('DOMContentLoaded', function() {
+      const customerService = document.getElementById('customerService');
+      const contactConsult = document.getElementById('contactConsult');
+      
+      if (customerService) {
+        customerService.addEventListener('click', () => {
+          window.open('https://work.weixin.qq.com/kfid/kfcffbc56183840b88f', '_blank');
+        });
+      }
+      
+      if (contactConsult) {
+        contactConsult.addEventListener('click', () => {
+          window.location.href = '/#contact';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
